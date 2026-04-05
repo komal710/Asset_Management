@@ -136,8 +136,8 @@ def calculate_daily_ratios(returns, volume_data, window=30, risk_free_rate=0.05)
 def add_expense_ratio(summary):
 
     expense_ratio = {
-        "NIFTYBEES.NS": 0.0005,
-        "SETFNIF50.NS": 0.0010
+        "NIFTYBEES.NS": 0.0004,
+        "ITBEES.NS": 0.0022
     }
 
     summary["Expense Ratio"] = summary.index.map(expense_ratio)
@@ -166,7 +166,7 @@ def compliance_check(summary):
 # -----------------------------------
 # 7. EXPORT TO EXCEL
 # -----------------------------------
-def export_to_excel(data, returns, summary, etf_data, filename="ETF_Analysis.xlsx"):
+def export_to_excel(data, returns, summary, etf_data, filename="ETF_Analysis1.xlsx"):
 
     with pd.ExcelWriter(filename, engine='openpyxl', mode='w') as writer:
 
@@ -187,7 +187,7 @@ def export_to_excel(data, returns, summary, etf_data, filename="ETF_Analysis.xls
 # -----------------------------------
 def main():
 
-    tickers = ["NIFTYBEES.NS", "SETFNIF50.NS"]
+    tickers = ["NIFTYBEES.NS", "ITBEES.NS"]
     benchmark = "^NSEI"
 
     print(" Fetching data...")
